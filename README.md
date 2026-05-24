@@ -1,76 +1,49 @@
 # Makerspace
-## React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-### React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-### Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Structure
+This project is initialized using Vite's React template for 'Typescript + React Compiler'. Structuraly the code is organized as follows:
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+src/
+ ├─ App.css
+ ├─ App.tsx             // Handles routing and UI entrypoint
+ ├─ index.css
+ ├─ main.tsx            // Initializes application
+ ├─ components/         // Reusable components
+ │  ├─ Alert.tsx
+ │  ├─ Map.tsx
+ │  ├─ Navbar.tsx
+ │  ├─ OpenStatus.tsx
+ │  └─ Schedule.tsx
+ ├─ pages/              // Pages for the application
+ │  ├─ Home.tsx
+ │  └─ Wiki.tsx
+ └─ assets/
 ```
+## Local deployment
+To deploy the website locally you need to have *node* and *npm* installed, see [npm Docs](https://docs.npmjs.com/cli/configuring-npm/install) and [Download Node.js®](https://nodejs.org/en/download/) for more information. Preferably some familiarity with the command line as well  to use necessary tools.
+
+### 1. Clone and enter the repository locally
+```
+git clone https://github.com/Elvebakken-IM/MakerSpace.git
+cd MakerSpace
+```
+or, through SSH if that is properly configured:
+```
+git clone git@github.com:Elvebakken-IM/MakerSpace.git
+cd Makerspace
+```
+### 2. Install dependencies
+```
+npm install
+```
+### 3. Run server
+```
+npm run dev
+```
+### 4. Enter through web browser
+Go to [localhost:5173](http://localhost:5173) to see the deployed application! The port may be different depending on your configuration.
+## Roadmap
+The ultimate goal is to have a fully deployed application ready for usage, the current roadmap (as of 24-05-2026) is to
+- Do a full rewrite of the old static website, see [this](https://github.com/Elvebakken-IM/MakerSpace/issues/3) tracker for more information
+- Deploy wiki with [Docosaurus](https://docusaurus.io)
+- Rework the schedule and status components to instead fetch data and style it properly
+- Implement an admin dashboard for employees
