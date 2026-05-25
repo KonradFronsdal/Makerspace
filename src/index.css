@@ -1,7 +1,16 @@
 /* Contain general CSS styling i.e. h1 */
 @import 'tailwindcss';
 
+:root {
+  --background-color: rgba(255, 254, 239, 1);
+  --primary-text-color: rgba(58, 71, 255, 1);
+  --secondary-text-color: rgba(121, 129, 247, 1);
+  --dark-text-color: rgba(0, 0, 0, 1);
+  --border-color: rgba(0, 0, 0, 1);
+}
+
 body {
+  background-color: var(--background-color);
   font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
