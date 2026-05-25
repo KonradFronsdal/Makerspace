@@ -1,11 +1,11 @@
 # Makerspace
 ## Structure
-This project is initialized using Vite's React template for 'Typescript + React Compiler'. Structuraly the code is organized as follows:
+This project is initialized using Vite's React template for 'Typescript + React Compiler'. As well as using Tailwind CSS for basic styling, specifically the Vite version. Structuraly the code is organized as follows:
 ```
 src/
  ├─ App.css
  ├─ App.tsx             // Handles routing and UI entrypoint
- ├─ index.css
+ ├─ index.css           // Styles elements and imports Tailwind CSS
  ├─ main.tsx            // Initializes application
  ├─ components/         // Reusable components
  │  ├─ Alert.tsx
