@@ -32,6 +32,11 @@ git clone git@github.com:Elvebakken-IM/MakerSpace.git
 cd Makerspace
 ```
 ### 2. Install dependencies
+In case of Nix you may want to create a custom shell using `nix-shell`, as the unstable branch currently have mishaps resort to stable:
+```
+nix-shell -I nixpkgs=channel:nixos-26.05 -p vitejs nodejs
+```
+In any case do:
 ```
 npm install
 ```
