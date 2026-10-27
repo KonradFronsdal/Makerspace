@@ -1,9 +1,21 @@
-import schedule from '../assets/data/schedule.json'
+import { useEffect, useState } from 'react'
 
-function OpenStatus() {
+interface ScheduleItem {
+  open: boolean
+  time: string
+}
+
+function Status() {
+  const [ schedule, setSchedule ] = useState(null)
+
+  useEffect(() => {
+    fetch('/schedule.json')
+      .then(response => response.json())
+      .then(data => setSchedule(data))
+  }, [])
   return (
-    <h1>OpenStatus</h1>
+    <h1>{schedule}</h1>
   )
 }
 
-export default OpenStatus
+export default Status

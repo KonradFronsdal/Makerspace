@@ -1,9 +1,9 @@
-import Navbar from '../components/Navbar.tsx'
+import Status from '../components/Status.tsx'
 
 function Home() {
   return (
     <header>
-      <Navbar />
+      <Status />
     </header>
   )
 }
