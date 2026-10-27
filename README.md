@@ -8,15 +8,11 @@ src/
  ├─ index.css           // Styles elements and imports Tailwind CSS
  ├─ main.tsx            // Initializes application
  ├─ components/         // Reusable components
- │  ├─ Alert.tsx
- │  ├─ Map.tsx
- │  ├─ Navbar.tsx
- │  ├─ OpenStatus.tsx
- │  └─ Schedule.tsx
+ │  └─ ...
  ├─ pages/              // Pages for the application
- │  ├─ Home.tsx
- │  └─ Wiki.tsx
- └─ assets/
+ │  └─ ...
+ └─ assets/             // Static asset files
+    └─ ...
 ```
 ## Local deployment
 To deploy the website locally you need to have *node* and *npm* installed, see [npm Docs](https://docs.npmjs.com/cli/configuring-npm/install) and [Download Node.js®](https://nodejs.org/en/download/) for more information. Preferably some familiarity with the command line as well  to use necessary tools.
@@ -47,8 +43,6 @@ npm run dev
 ### 4. Enter through web browser
 Go to [localhost:5173](http://localhost:5173) to see the deployed application! The port may be different depending on your configuration.
 ## Roadmap
-The ultimate goal is to have a fully deployed application ready for usage, the current roadmap (as of 24-05-2026) is to
-- Do a full rewrite of the old static website, see [this](https://github.com/Elvebakken-IM/MakerSpace/issues/3) tracker for more information
-- Deploy wiki with [Docosaurus](https://docusaurus.io)
-- Rework the schedule and status components to instead fetch data and style it properly
-- Implement an admin dashboard for employees
+The ultimate goal is to have a fully deployed application ready for usage, the current roadmap (as of 27-10-2026) is to:
+- Do a full rewrite of the old static website with React and `.tsx`
+- Deploy the wiki with [Docosaurus](https://docusaurus.io) at [sister repository](https://github.com/Elvebakken-IM/MakerspaceWiki)
